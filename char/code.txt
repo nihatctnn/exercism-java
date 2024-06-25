@@ -1,0 +1,27 @@
+class SqueakyClean {
+    public static String clean(String txt){
+        String replacedString;
+        String[] splitted;
+        String part1;
+        String part2;
+        replacedString = txt.replaceAll(" ","_");
+        if(replacedString.contains("-")){
+            
+            splitted = replacedString.split("-",2);
+            part1 = splitted[0];
+            part2 = splitted[1];
+        
+            replacedString = part1 + part2.substring(0,1).toUpperCase() + part2.substring(1).toLowerCase();
+        }
+        
+        replacedString = replacedString.replaceAll("4","a");
+        replacedString = replacedString.replaceAll("3","e");
+        replacedString = replacedString.replaceAll("0","o");
+        replacedString = replacedString.replaceAll("1","l");
+        replacedString = replacedString.replaceAll("7","t");
+        replacedString = replacedString.replaceAll("\\s","_");
+        replacedString = replacedString.replaceAll("[¡!@#$%^&*()+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]", "");
+            
+        return replacedString;
+    }
+}

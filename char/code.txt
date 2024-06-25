@@ -1,10 +1,13 @@
 class SqueakyClean {
+
     public static String clean(String txt){
+        
         String replacedString;
         String[] splitted;
         String part1;
         String part2;
         replacedString = txt.replaceAll(" ","_");
+
         if(replacedString.contains("-")){
             
             splitted = replacedString.split("-",2);

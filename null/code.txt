@@ -1,0 +1,24 @@
+class Badge {
+    
+    public String print(Integer id, String name, String department) {
+
+        if( (id != null) && (name != null) && (department != null) ){
+            return ("["+id+"] - " + name +  " - " + department.toUpperCase());
+        }
+
+        else if ( (id == null) && (name != null) && (department != null) ){
+            return (name +  " - " + department.toUpperCase());
+        }
+            
+        else if ( (name != null) && (department == null) ){
+            if(id == null){
+                return name + " - OWNER";
+            }
+            else if ((id != null)){
+                return "["+id+"] - " + name + " - OWNER";
+            }
+        }
+
+     return "";   
+    }
+}

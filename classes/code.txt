@@ -1,0 +1,36 @@
+public class ElonsToyCar {
+
+    private int meters;
+    private int percentage;
+
+    public ElonsToyCar() {
+        this.meters = 0;
+        this.percentage = 100;
+    }
+
+    public static ElonsToyCar buy() {
+        return new ElonsToyCar();
+    }
+
+    // Method to display the total distance driven
+    public String distanceDisplay() {
+        return "Driven " + meters + " meters";
+    }
+
+    // Method to display the remaining battery percentage
+    public String batteryDisplay() {
+        if (percentage > 0) {
+            return "Battery at " + percentage + "%";
+        } else {
+            return "Battery empty";
+        }
+    }
+
+    // Method to drive the car 20 meters if the battery is not empty
+    public void drive() {
+        if (percentage > 0) {
+            meters += 20;
+            percentage--;
+        }
+    }
+}
